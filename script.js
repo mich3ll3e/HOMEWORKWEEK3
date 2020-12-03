@@ -4,7 +4,7 @@ var specialcharacter = [
 ];
 var number = ['0','1','2','3','4','5','6','7','8','9'];
 var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','X'];
+var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 // Creating Conditions
 function getOptions() {
@@ -21,7 +21,7 @@ if (length < 8) {
   alert("Cannot be less than 8 characters. Please enter again.");
   return;
 }
-if (length >= 20) {
+if (length > 128) {
   alert("Cannot be more than 20 characters. Please enter again.");
   return;
 };
@@ -50,18 +50,18 @@ if (
 // Store user input
 var passwordOptions = {
   length: length,
-  haspecialcharacter:haspecialcharacter,
-  haslowercase:haslowercase,
-  hasnumber:hasnumber,
-  hasuppercase:hasuppercase
+  haspecialcharacter: haspecialcharacter,
+  haslowercase: haslowercase,
+  hasnumber: hasnumber,
+  hasuppercase: hasuppercase
 };
 return passwordOptions;
 }
 
 //Store Random input
-function genRandom(ar) {
-      randomchars = Math.floor(Math.random() * ar.length);
-      randomEl = ar[randomchars];
+function genRandom(arr) {
+      randomIndex = Math.floor(Math.random() * arr.length);
+      randomEl = arr[randomIndex];
   
   return randomEl;
 }
@@ -99,8 +99,8 @@ function generatePassword() {
 
   // Generate Passwords with conditions applied
   for (var i = 0; i < options.length;i++) {
-    var possibleOutcome = genRandom(possibleOutcome);
-    result.push(possibleOutcome);
+    var possibleOutcomes = genRandom(possibleOutcome);
+    result.push(possibleOutcomes);
   }
   for (var i = 0; i < definiteOuntcome.length;i++) {
     result[i] = definiteOuntcome[i];
