@@ -8,5 +8,4 @@ This is a Password Generator. When you click the "Generate Password" button, the
 ## Link
 https://mich3ll3e.github.io/HOMEWORKWEEK3/
 
-## Screenshot 
 
